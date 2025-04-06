@@ -1,38 +1,55 @@
 #include <iostream>
 #include<iomanip>
-#include<string.h>
+#include<cstring>
 #include <climits>
 #include <vector>
 #include<bits/stdc++.h>
+#include<conio.h>
+#include <cstdio>
+#include<stdio.h>
+#include <algorithm>
 using namespace std;
+
+#define fasterIO ios::sync_with_stdio(0); cin.tie(0);
 
 
 int main()
 {
-
-
-int n;
-cin>>n;
-int f=0;
-vector<int>v(n);
-for(int i=0;i<n;i++)
-{
-    cin>>v[i];
-}
-for(int i=0;i<n;i++)
-{
-    if(v[i]==1)
+    fasterIO
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r+",stdin);
+    freopen("output.o","w+",stdout);
+    #endif
+    char ch1[1000];
+    char ch2[1000];
+    //fgets(ch1,sizeof(ch1),stdin);
+    gets(ch1);
+    int i=0,len=0,j;
+    while(ch1[i]!='\0')
     {
-       f=1;
-
+        len++;
+        i++;
     }
-
-}
-if(f==1){
-cout<<"HARD"<<endl;
-}
-else{
-    cout<<"EASY"<<endl;
-}
-return 0;
+    // for(int a = 0;a<=len;a++)
+    // {
+    //     tolower(ch1[a]);
+    // }
+    //ch2 = strrev(ch1);
+    for(j = 0,i=len-1;i>= 0;i--,j++)
+    {
+        ch2[j]=ch1[i];
+    }
+    ch2[j]='\0';
+    int d = strcmp(ch1,ch2);
+    //cout<<d<<endl;
+    if(d == 0)
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+    //cout<<ch1<<endl;
+    return 0;
 }
